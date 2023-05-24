@@ -8,7 +8,7 @@ export default createRouter({
   routes: [
     { path: '/tasks', component: Tasks, alias: ''},
     { path: '/new', component: New },
-    { path: '/task', component: Task }
+    { path: '/task/:taskId', component: Task }
   ],
   linkActiveClass: 'active',
   linkExactActiveClass: 'active'

@@ -1,10 +1,10 @@
 <template>
   <h1 class="text-white center">Задач пока нет</h1>
-  <template >
+  <div>
     <h3 class="text-white">Всего активных задач: 0</h3>
-    <div class="card">
+    <div class="card" v-for="task in tasks">
       <h2 class="card-title">
-        Название задачи
+        {{ task.title }}
         <AppStatus :type="'done'" />
       </h2>
       <p>
@@ -14,15 +14,26 @@
           </small>
         </strong>
       </p>
-      <button class="btn primary">Посмотреть</button>
+      <button class="btn primary" @click="lookTask" :id="taskId">Посмотреть</button>
     </div>
-  </template>
+  </div>
 </template>
 
 <script>
 import AppStatus from '../components/AppStatus'
 
 export default {
+  data(){
+    return {
+      title: 'Название задачи'
+    }
+  },
+  methods: {
+    lookTask(){
+      this.$router.push('/task/:taskId')
+    }
+  },
+  inject: ['tasks'],
   components: {AppStatus}
 }
 </script>

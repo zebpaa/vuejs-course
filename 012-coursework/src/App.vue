@@ -9,11 +9,6 @@
 import TheNavbar from './components/TheNavbar'
 
 export default {
-  data(){
-    return {
-      tasks: ['']
-    }
-  },
   methods: {
 
   },
@@ -21,8 +16,8 @@ export default {
   provide() {
     return {
       tasks: [
-        {id: '1', theme: ''}
-
+        {id: '1', title: 'Task 1'},
+        {id: '2', title: 'Task 2'}
       ]
     }
   }

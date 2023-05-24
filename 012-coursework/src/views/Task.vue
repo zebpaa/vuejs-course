@@ -19,6 +19,11 @@
 import AppStatus from '../components/AppStatus'
 
 export default {
+  inject: ['tasks'],
+  props: ['taskId'],
+  computed: {
+
+  },
   components: {AppStatus}
 }
 </script>
